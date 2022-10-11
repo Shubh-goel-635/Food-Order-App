@@ -1,0 +1,27 @@
+.mainblock{
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    /* background-color: aquamarine; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mainblock>.subblock{
+    width: 48%;
+    /* min-height: auto; */
+    /* max-height: 95%; */
+    height: 95%;
+    /* margin-top: 5px; */
+    padding: 30px;
+    display: block;
+    justify-content: center;
+
+}
+h3{
+
+    text-decoration: underline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+}

@@ -1,0 +1,78 @@
+.mainblock{
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    /* background-color: aquamarine; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mainblock>.subblock{
+    width: 80%;
+    /* min-height: auto; */
+    /* max-height: 95%; */
+    height: 80%;
+    /* margin-top: 5px; */
+    padding: 30px;
+    display: block;
+    justify-content: center;
+    background-color: rgb(255, 255, 255, 0.8);
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(155, 153, 153);
+}
+.table-responsive{
+    max-height: 90%
+}
+::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: rgb(54, 46, 46);
+    border-radius: 3px;
+}
+td{
+    color: black;
+}
+h2{
+    color: #04225b;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+.spinner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: black;
+}
+.placed{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.placed div{
+    width: 50%;
+}
+.placed{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.placed div{
+    width: 50%;
+}
+.placed div i{
+    color: #04225b;
+    font-size: 50px;
+}

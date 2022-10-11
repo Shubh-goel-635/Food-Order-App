@@ -1,0 +1,77 @@
+<div class="mainblock">
+  <div class="subblock">
+    <div class="row">
+      <div class="col-md-3"><h2>Staff Details</h2></div>
+      <div class="col-md-6"></div>
+        <span title="Click here to add new staff"><button type="button" class="btn btn-primary" (click)="addStaff()">Add new staff</button></span>
+    </div>
+    <pre></pre>
+    <div class="table table-responsive" *ngIf="!error">
+      <table class="table table-striped table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of staffList.data">
+              <td>{{s.id}}</td>
+              <td>{{s.name | titlecase}}</td>
+              <td>{{s.email | titlecase}}</td>
+              <td>
+                  <span title="Click here to edit staff"><button type="button" class="btn btn-primary" [routerLink]="['/editStaff/',s.id]"><i class="fa-solid fa-user-pen"></i></button></span>
+              </td>
+              <td>
+                <span title="Click here to delete staff"><button type="button" class="btn btn-danger" (click)="deleteStaff(s.id)"><i class="fa-solid fa-user-minus"></i></button></span>
+              </td>
+              
+            </tr>
+          </tbody>
+      </table>
+    </div> 
+  </div>
+</div>
+<!-- <div class="table wrapper">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-2"><h3>Staff details</h3></div>
+        
+        <div class="col-md-7"></div>
+  
+          <span title="Click here to add new staff"><button type="button" class="btn btn-primary" (click)="addStaff()">add new staff</button></span>
+  
+      </div>
+      
+      <div *ngIf="!error">
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let s of staffList.data">
+                <td>{{s.id}}</td>
+                <td>{{s.name | titlecase}}</td>
+                <td>{{s.email}}</td>
+                <td>
+                    <span title="Click here to edit staff"><button type="button" class="btn btn-primary" [routerLink]="['/editStaff/',s.id]"><i class="fa-solid fa-user-pen"></i></button></span>
+                </td>
+                <td>
+                  <span title="Click here to delete staff"><button type="button" class="btn btn-danger" (click)="deleteStaff(s.id)"><i class="fa-solid fa-user-minus"></i></button></span>
+                </td>
+                
+              </tr>
+            </tbody>
+        </table>
+      </div>
+  </div>
+</div> -->

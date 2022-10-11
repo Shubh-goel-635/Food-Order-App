@@ -1,0 +1,74 @@
+<div class="mainblock">
+  <div class="subblock">
+    <div class="row">
+      <div class="col-md-4"><h2>Food Product Details</h2></div>
+      <div class="col-md-5"></div>
+      <span title="Click here to add new product"><button class="btn btn-primary" (click)="addProduct()">Add new product</button></span>
+    </div>
+    <pre></pre>
+      <div class="table table-responsive" *ngIf="error">
+          <h5>{{errorMsg}}</h5>
+      </div>
+      <div *ngIf="!error" class="table table-responsive">
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Product Type</th>
+                  <th scope="col">About</th>
+                  <th scope="col">Product Price</th>
+                  <th scope="col">Update</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let r of result.data">
+                      <td>{{r.name | titlecase}}</td>
+                      <td>{{r.type | titlecase}}</td>
+                      <td>{{r.about | titlecase}}</td>
+                      <td>{{r.price | currency:'INR'}}</td>
+                      <td><span title="Click here to edit product"><button type="button" class="btn btn-primary" [routerLink]="['/editproduct/',r.id]"><i class="fa-solid fa-pen-to-square"></i></button></span></td>
+                      <td><span title="Click here to delete product"><button type="button" class="btn btn-danger" (click)="deleteProduct(r.id)"><i class="fa-solid fa-trash"></i></button></span></td>
+                  </tr>
+              </tbody>
+            </table>
+      </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-4"><h3>Food Product details</h3></div>
+    <div class="col-md-5"></div>
+    <span title="Click here to add new product"><button class="btn btn-primary" (click)="addProduct()">Add new product</button></span>
+  </div>
+    <div *ngIf="error">
+        <h5>{{errorMsg}}</h5>
+    </div>
+    <div *ngIf="!error">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Type</th>
+                <th scope="col">About</th>
+                <th scope="col">Product Price</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of result.data">
+                    <td>{{r.name | titlecase}}</td>
+                    <td>{{r.type | titlecase}}</td>
+                    <td>{{r.about | titlecase}}</td>
+                    <td>{{r.price | currency:'INR'}}</td>
+                    <td><span title="Click here to edit product"><button type="button" class="btn btn-primary" [routerLink]="['/editproduct/',r.id]"><i class="fa-solid fa-pen-to-square"></i></button></span></td>
+                    <td><span title="Click here to delete product"><button type="button" class="btn btn-danger" (click)="deleteProduct(r.id)"><i class="fa-solid fa-trash"></i></button></span></td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+      
+      
+</div> -->

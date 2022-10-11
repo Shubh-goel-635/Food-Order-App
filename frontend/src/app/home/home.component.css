@@ -1,0 +1,41 @@
+.mainblock{
+    height: calc(100% - 50px);
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+}
+.subblock{
+    margin-top: 100px;
+    width: 60%;
+    /* background-color: aquamarine; */
+    display: block;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+}
+.head{
+    /* background-color: yellow; */
+    margin-block-end: 50px;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+.subblock h1 span{
+    font-weight: bolder;
+}
+.footer{
+    /* background-color: blueviolet; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.footer span i{
+    /* background-color: aquamarine; */
+    color: white;
+    margin: 10px;
+    font-size: 30px;
+}

@@ -1,0 +1,60 @@
+<div class="mainblock">
+  <div class="subblock">
+    <h2>Main Menu</h2>
+    <div class="table table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">About</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Price</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of menu.data">
+            <td>{{m.name | titlecase}}</td>
+            <td>{{m.type | titlecase}}</td>
+            <td>{{m.about}}</td>
+            <td>{{m.availability}}</td>
+            <td>{{m.price | currency: "INR"}}</td>
+            <td>
+                <span title="Click here to delete product from menu"><button type="button" class="btn btn-danger" (click)="remove(m.id)"><i class="fa-solid fa-trash"></i></button></span>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2>All Products</h2>
+    <div class="table table-responsive">
+      <table class="table" id="response">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">About</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Price</th>
+            <th scope="col">Add To Menu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of foodProducts">
+            <td>{{f.name | titlecase}}</td>
+            <td>{{f.type | titlecase}}</td>
+            <td>{{f.about}}</td>
+            <td>{{f.availability}}</td>
+            <td>{{f.price | currency: "INR"}}</td>
+            <td>
+                <span title="Click here to add product to menu"><button type="button" class="btn btn-primary" (click)="add(f.id)"><i class="fa-solid fa-plus"></i></button></span>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

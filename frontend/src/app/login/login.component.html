@@ -1,0 +1,51 @@
+<section class="mainblock">
+    <article class="subblock">
+            <div>
+                <form #logData="ngForm" (ngSubmit)="loginUser(logData)">
+                    <div>
+                        <i id="userlogo" class="fa-solid fa-user-tie"></i>
+                        <br>
+                        <h3>Login</h3>
+                        <br>
+                        <div class="inputrow">
+                            <span class="inputrowcontent">
+                                <i class="fa-solid fa-envelope fa-xl"></i>
+                            </span>
+                            <span class="inputrowcontent">
+                                <input type="email"
+                                id="email"
+                                name="email"
+                                #email="ngModel"
+                                ngModel
+                                placeholder="Enter User Email"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}"
+                                required>
+                                <span *ngIf="email.invalid&&email.touched" style="color: red;">Enter Valid Email</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <div  class="inputrow">
+                            <span class="inputrowcontent">
+                                <i class="fa-solid fa-lock fa-xl"></i>
+                            </span>
+                            <span class="inputrowcontent">
+                                <input type="password"
+                                id="password"
+                                name="password"
+                                #password="ngModel"
+                                ngModel
+                                placeholder="Enter User password"
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                                required>
+                                <span *ngIf="password.invalid&&password.touched" style="color: red;">Enter Valid Password</span>
+                            </span>
+                        </div>
+                    </div>
+                    <span *ngIf="validator" style="color: red;">Email or Password are incorrect</span>
+                    <br>
+                    <span title="Click here to login"><button type="submit" [disabled]="logData.invalid">Login</button></span>
+                  </form>
+            </div>
+    </article>
+</section>
